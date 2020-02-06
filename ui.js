@@ -99,20 +99,29 @@ function createUI(root) {
 			}
 		},
 
+		toggleFormBtn(state) {
+			switch (state) {
+				case "open":
+					formBtn.classList.remove("btn-info");
+					formBtn.classList.add("btn-danger");
+					formBtn.querySelector("i").classList.add("turn");
+					break;
+				case "close":
+					formBtn.classList.remove("btn-danger");
+					formBtn.classList.add("btn-info");
+					formBtn.querySelector("i").classList.remove("turn");
+					break;
+			}
+		},
+
 		openContactForm() {
 			form.classList.remove("hide");
-			formBtn.classList.remove("btn-info");
-			formBtn.classList.add("btn-danger");
-			formBtn.querySelector("i").classList.add("turn");
 		},
 
 		closeContactForm() {
 			form.classList.add("hide");
-			formBtn.classList.remove("btn-danger");
-			formBtn.classList.add("btn-info");
-			formBtn.querySelector("i").classList.remove("turn");
-			this.clearInputs([ nameInput, phoneInput, mailInput ]);
 		},
+
 		openCard(element) {
 			const cardBtns = element.querySelector(".icons");
 			const cardBody = element.querySelector(".card-body");
