@@ -35,7 +35,6 @@ addBtn.addEventListener("click", (e) => {
 		Store.addContact(contact);
 		UI.displayContacts(Store.getContacts());
 		UI.closeContactForm();
-		UI.toggleFormBtn("close");
 		UI.createAlert("Contact Added!", "success");
 	}
 });
@@ -53,7 +52,6 @@ list.addEventListener("click", (e) => {
 
 		if (form.classList.contains("hide")) {
 			UI.openContactForm();
-			UI.toggleFormBtn("open");
 			const oldContactId = e.target.dataset.idname;
 			const contact = Store.getEditContact(oldContactId);
 			nameInput.value = contact.name;
@@ -74,8 +72,7 @@ list.addEventListener("click", (e) => {
 						Store.deleteContact(oldContactId);
 						Store.addContact(editedContact);
 						UI.displayContacts(Store.getContacts());
-						UI.closeContactForm();
-						UI.toggleFormBtn("close");
+						sUI.toggleFormBtn("close");
 						UI.clearInputs([ nameInput, phoneInput, mailInput, searchInput ]);
 						UI.createAlert("Contact Edited!", "success");
 					}
@@ -114,7 +111,6 @@ formBtn.addEventListener("click", () => {
 	}
 	else {
 		UI.closeContactForm();
-		UI.toggleFormBtn("close");
 	}
 });
 
@@ -129,7 +125,6 @@ document.addEventListener("click", (event) => {
 				!event.target.classList.contains("edit")
 			) {
 				UI.closeContactForm();
-				UI.toggleFormBtn("close");
 			}
 		}
 	}

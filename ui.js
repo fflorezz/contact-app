@@ -116,10 +116,12 @@ function createUI(root) {
 
 		openContactForm() {
 			form.classList.remove("hide");
+			this.toggleFormBtn("open");
 		},
 
 		closeContactForm() {
 			form.classList.add("hide");
+			this.toggleFormBtn("close");
 		},
 
 		openCard(element) {
