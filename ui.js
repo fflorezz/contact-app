@@ -16,7 +16,7 @@ function createUI(root) {
         <input class="form-control" type="text" id="name">
         <label for="autor"><small>Phone</small></label>
         <input class="form-control" type="text" id="phone">
-        <label for="isbn"><small>Mail</small></label>
+        <label for="mail"><small>Mail</small></label>
 				<input class="form-control" type="text" id="mail">
 				
       </div>

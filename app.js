@@ -72,7 +72,6 @@ list.addEventListener("click", (e) => {
 						Store.deleteContact(oldContactId);
 						Store.addContact(editedContact);
 						UI.displayContacts(Store.getContacts());
-						sUI.toggleFormBtn("close");
 						UI.clearInputs([ nameInput, phoneInput, mailInput, searchInput ]);
 						UI.createAlert("Contact Edited!", "success");
 					}
@@ -91,7 +90,6 @@ list.addEventListener("click", (e) => {
 			card = e.target.parentNode.parentNode;
 		}
 		const cardBtns = card.querySelector(".icons");
-		const cardBody = card.querySelector(".card-body");
 		if (cardBtns.classList.contains("hide")) {
 			UI.openCard(card);
 		}
@@ -114,7 +112,7 @@ formBtn.addEventListener("click", () => {
 	}
 });
 
-// #CLOSE  WHEN USER CLICKS OUTSIDE
+// #CLOSE ELEMENT WHEN USER CLICKS OUTSIDE
 document.addEventListener("click", (event) => {
 	// #CONTACT FORM
 	if (!form.classList.contains("hide")) {
